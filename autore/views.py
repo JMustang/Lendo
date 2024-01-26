@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
 
 from .forms import AutorForm
+from .models import Autor
 
 
 def index(request):
-    return render(request, 'autor/index.html')
+    autores = Autor.objects.all()
+    return render(request, 'autor/index.html', {
+        'autores': autores,
+    })
 
 
 def add(request):
