@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ livros.titulo }}{% endblock %}
+
+{% block content %}
+     <h1 class="mb-6 text-2xl">{{ livros.titulo }}</h1>
+
+     <h3><strong>Status:</strong> {{ livros.get_status_display }}</h3>
+     <h3><strong>Autor:</strong> <a href="{% url 'autor:detail' livros.autor.id %}">{{ livros.autor.name }}</a></h3>
+
+     <a href="{% url 'livros:edit' livros.id %}" class="mt-6 py-4 px-6 inline-block bg-violet-700 hover:bg-violet-900 rounded-md text-white">Salva</a>
+     <a href="{% url 'livros:delete' livros.id %}" class="mt-6 py-4 px-6 inline-block bg-amber-700 hover:bg-amber-900 rounded-md text-white">Delete</a>
+{% endblock %}

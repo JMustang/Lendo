@@ -8,7 +8,9 @@
     {% if livros %}
         {% for livro in livros %}
             <div class="p-4 grid grid-cols-2 gap-4 bg-slate-100">
-                <h2>{{ livro.titulo }}</h2>
+                <h2>
+                    <a href="{% url 'livros:detail' livro.id %}">{{ livro.titulo }}</a>
+                </h2>
                 <h2>{{ livro.get_status_display }}</h2>
             </div>
         {% endfor %}

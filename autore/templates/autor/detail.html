@@ -8,8 +8,10 @@
     {% if autor.livros.count %}
         {% for livro in autor.livros.all %}
             <div class="p-4 grid grid-cols-2 gap-4 bg-slate-100">
-                <h2>{{ livro.titulo }}</h2>
-                <h2>{{ livro.get_status_display }}</h2>
+                <h2>
+                    <a href="{% url 'livros:detail' livro.id %}">{{ livro.titulo }}</a>
+                </h2>
+                <p>{{ livro.get_status_display }}</p>
             </div>
         {% endfor %}
     {% else %}
