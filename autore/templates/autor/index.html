@@ -10,7 +10,9 @@
     <div class="space-y-4 mb-6">
         {% for autor in autores %}
             <div class="py-4 px-6 bg-slate-100">
+                <a href="{% url 'autor:detail' autor.id %}">
                 {{ autor.name }}
+                </a>
             </div>
         {% endfor %}
     </div>
