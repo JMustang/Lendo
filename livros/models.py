@@ -19,3 +19,6 @@ class Livro(models.Model):
     titulo = models.CharField(max_length=255)
     autor = models.ForeignKey(Autor, related_name='livros', on_delete=models.CASCADE)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=WAITTING)
+
+class Meta:
+    ordem = ['titulo']

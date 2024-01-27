@@ -12,7 +12,7 @@
             <a href="/" class="text-2xl text-white">Lendo</a>
 
             <div class="space-x-6">
-                <a href="#" class="text-white">Livros</a>
+                <a href="{% url 'livros:index' %}" class="text-white">Livros</a>
                 <a href="{% url 'autor:index' %}" class="text-white">Autores</a>
 
                 <a href="{% url 'livros:add' %}" class="py-4 px-6 bg-violet-700 hover:bg-violet-900 rounded-md text-white">Adicionar</a>
