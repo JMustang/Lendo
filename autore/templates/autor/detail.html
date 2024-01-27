@@ -5,4 +5,8 @@
 {% block content %}
     <h1 class="mb-6 text-2xl">{{autor.name}}</h1>
 
+    {% if books %}
+    {% else %}
+        <p>Esse autor ainda nao tem livros adicionados...</p>
+    {% endif %}
 {% endblock %}
